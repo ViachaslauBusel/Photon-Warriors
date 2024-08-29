@@ -1,0 +1,5 @@
+component EntityHealth {
+ FP MaxHealth;
+ [ExcludeFromPrototype]
+ FP Health; 
+}

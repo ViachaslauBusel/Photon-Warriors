@@ -1,0 +1,5 @@
+event HealthUpdated {
+  EntityRef Entity;
+  FP CurrentHealth;
+  FP MaxHealth;
+}

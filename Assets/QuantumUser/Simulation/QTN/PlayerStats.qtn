@@ -1,0 +1,10 @@
+component PlayerStats
+{
+   asset_ref<PlayerStatUpgraders> Upgraders;
+   [ExcludeFromPrototype]
+   FP MovementSpeed;
+   [ExcludeFromPrototype]
+   FP Damage;
+   [ExcludeFromPrototype]
+   FP AttackRange;
+}

@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7056c273343554244ac5f75731ac304f, type: 3}
+  m_Name: StatsUpgraders
+  m_EditorClassIdentifier: 
+  Identifier:
+    Path: QuantumUser/Simulation/Assets/StatsUpgraders
+    Guid:
+      Value: 293899794007224329
+  StatUpgraders:
+  - StatType: 1
+    BaseValue:
+      RawValue: 65536
+    UpgradeValue:
+      RawValue: 32768
+    UpgradeChance:
+      RawValue: 3932160
+  - StatType: 2
+    BaseValue:
+      RawValue: 655360
+    UpgradeValue:
+      RawValue: 655360
+    UpgradeChance:
+      RawValue: 1966080
+  - StatType: 3
+    BaseValue:
+      RawValue: 131072
+    UpgradeValue:
+      RawValue: 65536
+    UpgradeChance:
+      RawValue: 655360

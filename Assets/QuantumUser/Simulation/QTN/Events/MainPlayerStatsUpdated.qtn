@@ -1,0 +1,7 @@
+event MainPlayerStatsUpdated
+{
+  local player_ref Player;
+  FP MovementSpeed;
+  FP Damage;
+  FP AttackRange;
+}
