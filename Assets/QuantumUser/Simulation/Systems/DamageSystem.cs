@@ -7,7 +7,8 @@ namespace Quantum
     [Preserve]
     public unsafe class DamageSystem : SystemMainThreadFilter<DamageSystem.Filter>
     {
-        private SortedList<FP, EntityRef> _enemiesInRange = new SortedList<FP, EntityRef>();
+        private List<KeyValuePair<FP, EntityRef>> _enemiesInRange = new List<KeyValuePair<FP, EntityRef>>();
+
         public override void Update(Frame f, ref Filter filter)
         {
             var enimeies = f.Filter<Transform3D, EntityHealth>();
@@ -22,14 +23,17 @@ namespace Quantum
 
                 if (distance < filter.stats->AttackRange)
                 {
-                    _enemiesInRange.Add(distance, enemy);
+                    _enemiesInRange.Add(new KeyValuePair<FP, EntityRef>(distance, enemy));
                 }
             }
+
+            // Sort by distance
+            _enemiesInRange.Sort((x, y) => x.Key.CompareTo(y.Key));
 
             // Damage first 3 enemies
             for (var i = 0; i < 3 && i < _enemiesInRange.Count; i++)
             {
-                var enemy = _enemiesInRange.Values[i];
+                var enemy = _enemiesInRange[i].Value;
                 if (f.Unsafe.TryGetPointer(enemy, out EntityHealth* health))
                 {
                     health->Health -= filter.stats->Damage * f.DeltaTime;

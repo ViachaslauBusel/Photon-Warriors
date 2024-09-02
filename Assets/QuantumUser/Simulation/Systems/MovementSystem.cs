@@ -14,7 +14,7 @@
 
             FP magnitudeOfDirection = direction.Magnitude;
 
-            if (magnitudeOfDirection < FP.FromFloat_UNSAFE(0.1f)) return;
+            if (magnitudeOfDirection < FP._0_01) return;
 
             if (magnitudeOfDirection > 1)
             {
